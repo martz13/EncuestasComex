@@ -1,0 +1,33 @@
+[
+    {
+        "contiene": [
+            "satisfecho"
+        ],
+        "respuesta": "10"
+    },
+    {
+        "contiene": [
+            "recomendar"
+        ],
+        "respuesta": "10"
+    },
+    {
+        "contiene": [
+            "regres"
+        ],
+        "respuesta": "SI"
+    },
+    {
+        "contiene": [
+            "interés",
+            "interes"
+        ],
+        "respuesta": "SI"
+    },
+    {
+        "contiene": [
+            "complement"
+        ],
+        "respuesta": "SI"
+    }
+]
