@@ -5,8 +5,8 @@ const config = require("../config");
 const logger = require("../logger");
 
 const Estadisticas = require("../motor/estadisticas");
-
-const { ejecutarEncuesta } = require("../ejecutor");
+const EncuestaPage = require("../pages/EncuestaPage");
+const MotorEncuesta = require("../motor/MotorEncuesta");
 
 const { manejarError } = require("../errores");
 
@@ -84,13 +84,12 @@ class BotEncuestas {
 
                 try {
 
-                    await ejecutarEncuesta(
+                    const pagina = new EncuestaPage(this.page);
+                    const motor = new MotorEncuesta(pagina, this.estadisticas, logger);
 
-                        this.page,
-
-                        this.estadisticas
-
-                    );
+                    this.estadisticas.iniciarEncuesta();
+                    await motor.ejecutar();
+                    this.estadisticas.finalizarEncuesta(true);
 
                     completada = true;
 
