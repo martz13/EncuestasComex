@@ -1,7 +1,8 @@
 [
     {
         "contiene": [
-            "satisfecho"
+            "satisfecho",
+            "visita"
         ],
         "respuesta": "10"
     },

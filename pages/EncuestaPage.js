@@ -170,6 +170,21 @@ class EncuestaPage {
 
     }
 
+    async esPreguntaAbierta() {
+        // Agregamos :visible para no detectar inputs ocultos
+        return await this.page
+            .locator('input[type="text"]:visible, textarea:visible')
+            .count() > 0;
+    }
+
+    async escribirComentario(comentario) {
+        // Agregamos :visible para no escribir en inputs ocultos
+        await this.page
+            .locator('input[type="text"]:visible, textarea:visible')
+            .first()
+            .fill(comentario);
+    }
+
 }
 
 module.exports = EncuestaPage;
